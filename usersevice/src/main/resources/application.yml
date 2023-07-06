@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: internet-banking-user-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3309/core_bank
+    username: root
+    password: 123456789
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+
+app:
+  config:
+    keycloak:
+      server-url: http://localhost:8080/auth
+      realm: javatodev-internet-banking
+      clientId: internet-banking-api-client
+      client-secret: 69e21a34-6cfc-4efd-be0a-7411c193b82a
+  feign:
+    client:
+      core-banking: core-banking-service

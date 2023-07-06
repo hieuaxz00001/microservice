@@ -1,0 +1,18 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: internet-banking-utility-payment-service
+  datasource:
+    url: jdbc:mysql://localhost:3309/core_bank
+    username: root
+    password: 123456789
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
