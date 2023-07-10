@@ -7,6 +7,9 @@ services:
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=123456789
+    restart: always
+    volumes:
+      - .keycloak/:/opt/keycloak/data/h2/
   mysql_db:
     restart: always
     image: mysql:8.0
@@ -44,6 +47,7 @@ services:
       - eureka.client.serviceUrl.defaultZone=http://registry:8761/eureka/
     depends_on:
       - registry
+      - keycloak
     ports:
       - 8081:8081
     networks:

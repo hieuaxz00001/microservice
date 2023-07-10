@@ -6,7 +6,7 @@ app:
     keycloak:
       url: http://localhost:8080/auth
       realm: hieudx-internet-banking
-      client-secret: q5k8vmoefw4GRj4trZ5Y3EZTUHocfegq
+      client-secret: UpDhXIHGIRJ1PFJDaROHXSLmwGy1xVPS
       client-id: internet-banking-core-client
 
 spring:
